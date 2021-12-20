@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="text_input_layout_width">0dp</dimen>
+    <dimen name="behavior_peekHeight">50dp</dimen>
+    <dimen name="default_marginTop">5dp</dimen>
+    <dimen name="view_width">25dp</dimen>
+    <dimen name="view_height">1dp</dimen>
+    <dimen name="navigation_view_default_margin">12dp</dimen>
+</resources>
