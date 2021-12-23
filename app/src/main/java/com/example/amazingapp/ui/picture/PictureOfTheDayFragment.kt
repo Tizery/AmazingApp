@@ -126,7 +126,7 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> Toast.makeText(context, "Избранное", Toast.LENGTH_SHORT).show()
-            R.id.app_bar_settings -> requireActivity().supportFragmentManager.beginTransaction()
+            R.id.app_bar_settings -> requireActivity().supportFragmentManager.beginTransaction().addToBackStack(null)
                 .replace(
                     R.id.container,
                     SettingsFragment.newInstance()

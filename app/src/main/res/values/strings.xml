@@ -8,4 +8,7 @@
     <string name="search">Поиск</string>
     <string name="on_screen_1">На экран 1</string>
     <string name="on_screen_2">На экран 2</string>
+    <string name="button_one">Земля</string>
+    <string name="button_two">Марс</string>
+    <string name="button_three">Система</string>
 </resources>
