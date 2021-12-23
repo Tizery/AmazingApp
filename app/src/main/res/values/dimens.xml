@@ -7,4 +7,6 @@
     <dimen name="view_width">25dp</dimen>
     <dimen name="view_height">1dp</dimen>
     <dimen name="navigation_view_default_margin">12dp</dimen>
+    <dimen name="material_button_margin_end">5dp</dimen>
+    <dimen name="material_button_width">112dp</dimen>
 </resources>
