@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -17,10 +16,14 @@ import com.example.amazingapp.MainActivity
 import com.example.amazingapp.R
 import com.example.amazingapp.databinding.FragmentMainBinding
 import com.example.amazingapp.ui.SettingsFragment
+import com.example.amazingapp.ui.api.ApiActivity
+import com.example.amazingapp.ui.api.ApiBottomActivity
 import com.example.amazingapp.viewmodel.PictureOfTheDayState
 import com.example.amazingapp.viewmodel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PictureOfTheDayFragment : Fragment() {
 
@@ -75,13 +78,30 @@ class PictureOfTheDayFragment : Fragment() {
             }
         })
 
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            when(checkedId){
+                R.id.dayBeforeYesterday ->{viewModel.sendServerRequest(takeDate(-2))}
+                R.id.yesterday ->{viewModel.sendServerRequest(takeDate(-1))}
+                R.id.today ->{viewModel.sendServerRequest()}
+            }
+        }
+
         setBottomAppBar()
 
+    }
+
+    private fun takeDate(count: Int): String {
+        val currentDate = Calendar.getInstance()
+        currentDate.add(Calendar.DAY_OF_MONTH, count)
+        val defaultFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        defaultFormat.timeZone = TimeZone.getTimeZone("EST")
+        return defaultFormat.format(currentDate.time)
     }
 
     private fun renderData(state: PictureOfTheDayState) {
         when (state) {
             is PictureOfTheDayState.Error -> {
+                state.error.message
             }
             is PictureOfTheDayState.Loading -> {
                 binding.imageView.load(R.drawable.ic_no_photo_vector)
@@ -125,8 +145,14 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(context, "Избранное", Toast.LENGTH_SHORT).show()
-            R.id.app_bar_settings -> requireActivity().supportFragmentManager.beginTransaction().addToBackStack(null)
+            R.id.api_activity -> {
+                startActivity(Intent(requireContext(), ApiActivity::class.java))
+            }
+            R.id.api_bottom_activity -> {
+                startActivity(Intent(requireContext(), ApiBottomActivity::class.java))
+            }
+            R.id.app_bar_settings -> requireActivity().supportFragmentManager.beginTransaction()
+                .addToBackStack(null)
                 .replace(
                     R.id.container,
                     SettingsFragment.newInstance()

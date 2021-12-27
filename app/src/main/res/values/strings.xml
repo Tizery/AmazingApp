@@ -3,7 +3,7 @@
     <string name="picture_of_the_day_stub">Картинка дня</string>
     <string name="search_wiki">Найти в Википедии</string>
     <string name="wiki_helper_text">Поищите термин в википедии</string>
-    <string name="favourite">Избранное</string>
+    <string name="tab_layout">TabLayout</string>
     <string name="settings">Настройки</string>
     <string name="search">Поиск</string>
     <string name="on_screen_1">На экран 1</string>
@@ -11,4 +11,11 @@
     <string name="button_one">Земля</string>
     <string name="button_two">Марс</string>
     <string name="button_three">Система</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="system">Система</string>
+    <string name="botton_navigation_view">BottomNavigationView</string>
+    <string name="Yesterday">Вчера</string>
+    <string name="Today">Сегодня</string>
+    <string name="DayBeforeYesterday">Позавчера</string>
 </resources>
