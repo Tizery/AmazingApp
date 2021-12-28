@@ -12,10 +12,13 @@
     <color name="fab_background">#d81b60</color>
     <color name="view_background">#663b4351</color>
     <color name="earth">#00FF44</color>
-    <color name="mars">#FF3D00</color>
+    <color name="mars">#C75839</color>
     <color name="system">#01BDFC</color>
     <color name="pink_500">#ff6090</color>
     <color name="pink_700">#b0003a</color>
     <color name="yellow_200">#ffffcf</color>
     <color name="yellow_700">#cbc26d</color>
+    <color name="colorAccent">#FFD81B60</color>
+    <color name="colorAccent40Alfa">#66D81B60</color>
+    <color name="colorPrimaryDark">#000000</color>
 </resources>
