@@ -64,12 +64,7 @@ class PictureOfTheDayFragment : Fragment() {
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
-//                    BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
-//                    BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
-//                    BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
-//                    BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
-//                    BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
-//                    BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")
+
                 }
             }
 

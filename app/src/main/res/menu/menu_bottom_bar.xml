@@ -11,7 +11,7 @@
     <item
         android:id="@+id/api_bottom_activity"
         android:icon="@drawable/ic_telescope_bnv"
-        android:title="@string/botton_navigation_view"
+        android:title="@string/bottom_navigation_view"
         app:showAsAction="ifRoom" />
 
     <item
