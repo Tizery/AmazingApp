@@ -15,6 +15,7 @@ import coil.api.load
 import com.example.amazingapp.MainActivity
 import com.example.amazingapp.R
 import com.example.amazingapp.databinding.FragmentMainBinding
+import com.example.amazingapp.databinding.FragmentMainStartBinding
 import com.example.amazingapp.ui.SettingsFragment
 import com.example.amazingapp.ui.api.ApiActivity
 import com.example.amazingapp.ui.api.ApiBottomActivity
@@ -27,8 +28,8 @@ import java.util.*
 
 class PictureOfTheDayFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
-    val binding: FragmentMainBinding
+    private var _binding: FragmentMainStartBinding? = null
+    val binding: FragmentMainStartBinding
         get() {
             return _binding!!
         }
@@ -123,7 +124,7 @@ class PictureOfTheDayFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentMainStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
