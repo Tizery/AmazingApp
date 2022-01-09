@@ -11,4 +11,10 @@
     <dimen name="material_button_width">112dp</dimen>
     <dimen name="tabImageTextView_padding">10dp</dimen>
     <dimen name="tabImageTextView_text_size">15sp</dimen>
+    <dimen name="appBarLayoutHeight">260dp</dimen>
+    <dimen name="collapsingToolbarLayoutExpandedTitleMarginEnd">64dp</dimen>
+    <dimen name="collapsingToolbarLayoutExpandedTitleMarginStart">48dp</dimen>
+    <dimen name="textViewLineSpacingExtra">8dp</dimen>
+    <dimen name="textView_textSize">22sp</dimen>
+    <dimen name="btnCornerRadius">90dp</dimen>
 </resources>
