@@ -6,8 +6,8 @@
     <string name="tab_layout">TabLayout</string>
     <string name="settings">Настройки</string>
     <string name="search">Поиск</string>
-    <string name="on_screen_1">На экран 1</string>
-    <string name="on_screen_2">На экран 2</string>
+    <string name="coordinatorLayout">Координатор</string>
+    <string name="animationsLayout">Анимация</string>
     <string name="button_one">Земля</string>
     <string name="button_two">Марс</string>
     <string name="button_three">Система</string>
@@ -20,4 +20,12 @@
     <string name="DayBeforeYesterday">Позавчера</string>
     <string name="Kotlin">Kotlin (Ко́тлин) — статически типизированный, объектно-ориентированный язык программирования, работающий поверх Java Virtual Machine и разрабатываемый компанией JetBrains. Также компилируется в JavaScript и в исполняемый код ряда платформ через инфраструктуру LLVM. Язык назван в честь острова Котлин в Финском заливе, на котором расположен город Кронштадт[3].
 Авторы ставили целью создать язык более лаконичный и типобезопасный, чем Java, и более простой, чем Scala[3]. Следствием упрощения по сравнению со Scala стали также более быстрая компиляция и лучшая поддержка языка в IDE[4]. Язык полностью совместим с Java, что позволяет Java-разработчикам постепенно перейти к его использованию; в частности, язык также встраивается Android, что позволяет для существующего android-приложения внедрять новые функции на Kotlin без переписывания приложения целиком.</string>
+    <string name="date">5 июня 2018 г.</string>
+    <string name="tap_show_description">Показать описание</string>
+    <string name="description">На фото видно камни и песок в кратере Даниэлсона (диаметр кратера около 67 км), расположенного на юго-востоке области Arabia Terra.</string>
+    <string name="title">Кратер Даниэлсона</string>
+    <string name="TapAnimationsLayout">Анимация по тапу</string>
+    <string name="ObjectAnimatorLayout">ObjectAnimator</string>
+    <string name="option_one">Option 1</string>
+    <string name="option_two">Option 2</string>
 </resources>
