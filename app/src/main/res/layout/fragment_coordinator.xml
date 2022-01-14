@@ -45,6 +45,7 @@
         android:id="@+id/nested"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="?actionBarSize"
         app:layout_anchor="@id/main_appbar"
         app:layout_anchorGravity="bottom">
 

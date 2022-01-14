@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.amazingapp.R
 import com.example.amazingapp.databinding.BottomNavigationLayoutBinding
-import com.example.amazingapp.ui.SettingsFragment
+import com.example.amazingapp.ui.animations.AnimationsFragment
+import com.example.amazingapp.ui.animations.ObjectAnimatorFragment
+import com.example.amazingapp.ui.animations.TapAnimationsFragment
 import com.example.amazingapp.ui.coordinator.CoordinatorFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -40,7 +41,28 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                         ).commit()
                 }
                 R.id.navigation_two -> {
-                    Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(
+                            R.id.container,
+                            AnimationsFragment.newInstance()
+                        ).commit()
+                }
+                R.id.navigation_three -> {
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(
+                            R.id.container,
+                            TapAnimationsFragment.newInstance()
+                        ).commit()
+                }
+                R.id.navigation_four -> {
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(
+                            R.id.container,
+                            ObjectAnimatorFragment.newInstance()
+                        ).commit()
                 }
             }
             dismiss()
