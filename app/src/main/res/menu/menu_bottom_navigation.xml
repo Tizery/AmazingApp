@@ -17,5 +17,9 @@
             android:id="@+id/navigation_four"
             android:icon="@drawable/ic_mars"
             android:title="@string/ObjectAnimatorLayout" />
+        <item
+            android:id="@+id/navigation_five"
+            android:icon="@drawable/ic_system"
+            android:title="@string/RecyclerView" />
     </group>
 </menu>
