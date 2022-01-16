@@ -10,6 +10,7 @@ import com.example.amazingapp.ui.animations.AnimationsFragment
 import com.example.amazingapp.ui.animations.ObjectAnimatorFragment
 import com.example.amazingapp.ui.animations.TapAnimationsFragment
 import com.example.amazingapp.ui.coordinator.CoordinatorFragment
+import com.example.amazingapp.ui.recycler.RecyclerFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
@@ -62,6 +63,14 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                         .replace(
                             R.id.container,
                             ObjectAnimatorFragment.newInstance()
+                        ).commit()
+                }
+                R.id.navigation_five -> {
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .addToBackStack(null)
+                        .replace(
+                            R.id.container,
+                            RecyclerFragment.newInstance()
                         ).commit()
                 }
             }
