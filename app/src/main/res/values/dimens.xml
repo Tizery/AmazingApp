@@ -46,7 +46,7 @@
     <dimen name="header_padding">15dp</dimen>
     <dimen name="header_textSize">35sp</dimen>
     <dimen name="addItemImageView_margin">10dp</dimen>
-    <dimen name="removaItemImageView_margin">10dp</dimen>
+    <dimen name="removeItemImageView_margin">10dp</dimen>
     <dimen name="moveItem_margin">10dp</dimen>
     <dimen name="marsDescriptionTextView_padding">10dp</dimen>
 </resources>
