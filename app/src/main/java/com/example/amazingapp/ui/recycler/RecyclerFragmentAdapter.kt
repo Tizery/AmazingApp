@@ -160,6 +160,7 @@ class RecyclerFragmentAdapter(
 
     override fun onItemMove(fromPosition: Int, toPosition: Int) {
         data.removeAt(fromPosition).apply {
+            if (toPosition == 0) return Unit
             data.add(toPosition, this)
         }
         notifyItemMoved(fromPosition, toPosition)
