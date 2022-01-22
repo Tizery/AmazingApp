@@ -2,10 +2,18 @@ package com.example.amazingapp.ui.picture
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.BulletSpan
+import android.text.style.ForegroundColorSpan
+import android.text.style.ImageSpan
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -75,10 +83,16 @@ class PictureOfTheDayFragment : Fragment() {
         })
 
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
-            when(checkedId){
-                R.id.dayBeforeYesterday ->{viewModel.sendServerRequest(takeDate(-2))}
-                R.id.yesterday ->{viewModel.sendServerRequest(takeDate(-1))}
-                R.id.today ->{viewModel.sendServerRequest()}
+            when (checkedId) {
+                R.id.dayBeforeYesterday -> {
+                    viewModel.sendServerRequest(takeDate(-2))
+                }
+                R.id.yesterday -> {
+                    viewModel.sendServerRequest(takeDate(-1))
+                }
+                R.id.today -> {
+                    viewModel.sendServerRequest()
+                }
             }
         }
 
@@ -115,6 +129,35 @@ class PictureOfTheDayFragment : Fragment() {
                 }
                 binding.includeBottomSheet.bottomSheetDescriptionHeader.text = title
                 binding.includeBottomSheet.bottomSheetDescription.text = explanation
+                pictureOfTheDayResponseData.explanation?.let {
+
+                    binding.textView.typeface =
+                        Typeface.createFromAsset(requireContext().assets, "Aladin-Regular.ttf")
+                    val spannableStart = SpannableString(it)
+                    binding.textView.setText(spannableStart, TextView.BufferType.SPANNABLE)
+                    val spannable = binding.textView.text as SpannableString
+
+                    spannable.setSpan(
+                        ForegroundColorSpan(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.bottom_app_bar_background
+                            )
+                        ),
+                        0, spannable.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                    )
+
+                    for (i in spannable.indices) {
+                        if (spannable[i] == 'o') {
+                            spannable.setSpan(
+                                ImageSpan(requireContext(), R.drawable.ic_system),
+                                i,
+                                i + 1,
+                                Spannable.SPAN_INCLUSIVE_INCLUSIVE
+                            )
+                        }
+                    }
+                }
             }
         }
     }
