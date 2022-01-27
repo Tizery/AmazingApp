@@ -53,4 +53,8 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.AmazingApp.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_layer</item>
+    </style>
+
 </resources>
