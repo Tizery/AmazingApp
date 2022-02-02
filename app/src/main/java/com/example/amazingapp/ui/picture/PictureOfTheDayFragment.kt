@@ -4,11 +4,9 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
-import android.text.style.BulletSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
 import android.util.Log
@@ -22,7 +20,6 @@ import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.amazingapp.MainActivity
 import com.example.amazingapp.R
-import com.example.amazingapp.databinding.FragmentMainBinding
 import com.example.amazingapp.databinding.FragmentMainStartBinding
 import com.example.amazingapp.ui.SettingsFragment
 import com.example.amazingapp.ui.api.ApiActivity
@@ -33,6 +30,7 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.system.exitProcess
 
 class PictureOfTheDayFragment : Fragment() {
 
@@ -66,8 +64,13 @@ class PictureOfTheDayFragment : Fragment() {
         }
 
         val behavior = BottomSheetBehavior.from(binding.includeBottomSheet.bottomSheetContainer)
-        behavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
-
+        if (isMain) {
+            isMain = false
+            behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        } else {
+            isMain = true
+            behavior.state = BottomSheetBehavior.STATE_HIDDEN
+        }
 
         behavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
@@ -244,7 +247,7 @@ class PictureOfTheDayFragment : Fragment() {
                 override fun handleOnBackPressed() {
                     Log.d(TAG, "Fragment back pressed invoked")
                     if (isMain) {
-                        System.exit(0)
+                        exitProcess(0)
                     } else {
                         isMain = true
                         binding.bottomAppBar.navigationIcon = ContextCompat.getDrawable(
