@@ -64,17 +64,25 @@ class RecyclerFragmentAdapter(
         return data.size
     }
 
-    inner class EarthViewHolder(view: View) : BaseViewHolder(view) {
+    inner class EarthViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(data: Pair<Data, Boolean>) {
             FragmentRecyclerItemEarthBinding.bind(itemView).apply {
                 someTextTextView.text = data.first.someText
-                descriptionTextView.text = data.first.someDescription
                 earthImageView.setOnClickListener {
                     callbackListener.onClick(layoutPosition)
                 }
             }
         }
+
+        override fun onItemSelected() {
+            itemView.setBackgroundColor(Color.YELLOW)
+        }
+
+        override fun onItemClear() {
+            itemView.setBackgroundColor(0)
+        }
     }
+
 
     inner class MarsViewHolder(view: View) : BaseViewHolder(view), ItemTouchHelperViewHolder {
         override fun bind(data: Pair<Data, Boolean>) {
